@@ -62,7 +62,7 @@ Jelaskan perbedaan Navigator.push dan Navigator.pushReplacement.
 Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
 -
 - Form(): Membuat sebuah container untuk dijadikan parent dari input
-- ListTile(): componet berisis widget
+- ListTile(): componet berisi widget
 - Card(): membentuk sebuah component card sebagai container yang diiterasi untuk tiap data 
 - Drawer(): Panel untuk melakukan perpindahan tampilan
 - DropdownButton(): menampilkan dropdown dan sebagai fields untuk menerima input 
@@ -123,8 +123,42 @@ Membuat form widget untuk mengambil input, yaitu string input untuk judul, int u
 Membuat budget.dart yang mendisplay hasil input dalam bentuk container dan mengakses database dengan mengambil variable judul, nominal, dan jenis
 
 
+# **Tugas 9: Integrasi Web Service pada Flutter**
 
+Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
+-
+Ya, yaitu dengan menggunakan manual serialization yang memiliki built-in decoder JSON dari dart:convert.
 
+Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
+-
+- ListTile(): componet berisis widget
+- Card(): membentuk sebuah component card sebagai container yang diiterasi untuk tiap data
+- Drawer(): Panel untuk melakukan perpindahan tampilan
+- Padding: widget yang memberikan spacing diantara elemen-elemen
+- Text: mendisplay tulisan
 
+Jelaskan mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter.
+-
+1. Menambahkan dependency http, contongnya yaitu GET, POST, PU
+2. Membuat model yang berisi data yang akan diambil 
+3. Membuat http request ke web service dengan dependency yang telah dibuat
+4. Data yang ada dalam JSON akan dikonversikan ke model yang telah dibuat
+5. Data akan di-display di page dengan fungsi FutureBuilder
 
+Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas
+-
+1. Menambahkan tombol navigasi pada drawer/hamburger untuk ke halaman mywatchlist.
 
+Diimplementasikan dengan menambahkan ListTile My Watch List di drawer.dart
+
+2. Membuat satu file dart yang berisi model mywatchlist. Menambahkan halaman mywatchlist yang berisi semua watch list yang ada pada endpoint JSON
+
+Diimplementasikan dengan membuat file mywatchlist.dart dan modelnya untuk mengambil data JSON. Membuat watchlist_detail_page.dart dan watchlist_page.dart di folder page 
+
+3. Membuat navigasi dari setiap judul watch list ke halaman detail
+
+Diimplementasikan dengan menyambungkan watchlist_detail_page di watchlist_page
+
+5. Menambahkan halaman detail untuk setiap mywatchlist yang ada pada daftar tersebut. Halaman ini menampilkan judul, release date, rating, review, dan status (sudah ditonton/belum).
+
+Diimplementasikan dengan menambahkan widget di page seperti wisget text, button, serta menampilkan data watchlist
